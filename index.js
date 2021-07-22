@@ -1,7 +1,6 @@
 // require express
 const express = require('express');
-// require path
-const path = require('path');
+const routes = require("./routes/routes")
 // initialize PORT var
 const PORT = process.env.PORT || 3000;
 // initialize app var
@@ -13,6 +12,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // serve static files from the '/public' folder
 app.use(express.static("public"))
+app.use('/note', routes);
+app.use('/', routes);
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
