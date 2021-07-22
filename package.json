@@ -1,0 +1,23 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "![badmath](https://img.shields.io/github/repo-size/TheHebi/readme-generator)\r [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\r  ## Table of Contents\r * [Installation](#installation)\r * [Instructions](#instructions)\r * [Questions](#questions)\r * [License](#license)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheHebi/note-taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheHebi/note-taker/issues"
+  },
+  "homepage": "https://github.com/TheHebi/note-taker#readme"
+}
