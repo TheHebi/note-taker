@@ -16,7 +16,13 @@ notes.get("/notes", (req, res) =>
 
  // API GET Request
  notes.get('/api/notes', (req, res) => {
-    res.json(api);
+   readFromFile(path.join(__dirname,"../db/notes.json")).then(data=>{
+    res.json(JSON.parse(data))
+   })
+   .catch(err=>{
+     console.log(err)
+   })
+    // res.json(api);
 });
 
 // get request for specific note
@@ -40,6 +46,7 @@ notes.post("/api/notes", (req, res) => {
     };
 
     readAndAppend(newNote, "./db/notes.json");
+    api.push(newNote)
     res.json(`note added successfully 🚀`);
   } else {
     res.error("Error in adding tip");
@@ -55,6 +62,8 @@ notes.delete("/api/notes/:id",(req,res)=>{
       if(note.id===parseInt(req.params.id)){
           foundNote = true;
           api.splice(idx,1)
+        // api.filter(note=> note.id != +req.params.id)
+        // foundNote = true
           writeToFile("db/notes.json",api,(err)=>{
               if(err){
                   console.log(err);
