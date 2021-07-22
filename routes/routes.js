@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const notes = require('express').Router();
 const api = require('../db/notes.json')
-const { readFromFile, readAndAppend } = require("../helpers/fsUtils");
+const { readFromFile, readAndAppend, writeToFile } = require("../helpers/fsUtils");
 // const app = express();
 
 notes.get("/", (req, res) =>
@@ -45,5 +45,29 @@ notes.post("/api/notes", (req, res) => {
     res.error("Error in adding tip");
   }
 });
+
+// DELETE route for notes
+
+notes.delete("/api/notes/:id",(req,res)=>{
+  console.log(api,req.params)
+  let foundNote = false;
+  api.forEach((note,idx)=>{
+      if(note.id===parseInt(req.params.id)){
+          foundNote = true;
+          api.splice(idx,1)
+          writeToFile("db/notes.json",api,(err)=>{
+              if(err){
+                  console.log(err);
+                  return res.status(500).send("error");
+              } else{ 
+                return res.send("deleted!")
+              }
+          })
+      }
+  })
+  if(!foundNote){
+      return res.status(404).send("note not found")
+  }
+})
 
 module.exports = notes
