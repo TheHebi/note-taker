@@ -1,14 +1,12 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
+        "title": "heroku",
+        "text": "is very cool",
+        "id": 1
     },
     {
-        "title": "note",
-        "text": "new note"
-    },
-    {
-        "title": "dgs",
-        "text": "zdfg"
+        "title": "express",
+        "text": "is confusing even tho its a lot of copy paste of previous used code",
+        "id": 2
     }
 ]

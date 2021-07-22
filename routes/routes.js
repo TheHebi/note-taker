@@ -19,6 +19,12 @@ notes.get("/notes", (req, res) =>
     res.json(api);
 });
 
+// get request for specific note
+notes.get("/api/notes/:id", (req,res) => {
+  // display json for the notes array indices of the provided id
+  res.json(notes[req.params.id]);
+});
+
 // POST route for notes
 notes.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to add a note`);
@@ -29,7 +35,8 @@ notes.post("/api/notes", (req, res) => {
   if (req.body) {
     const newNote = {
       title,
-      text
+      text,
+      id:api.length?api[api.length-1].id + 1:1
     };
 
     readAndAppend(newNote, "./db/notes.json");
