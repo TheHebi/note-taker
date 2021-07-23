@@ -26,7 +26,6 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>{
-  console.log("hello2")
   return fetch('/api/notes', {
     method: 'GET',
     headers: {
@@ -89,10 +88,8 @@ const handleNoteDelete = (e) => {
   if (activeNote.id === noteId) {
     activeNote = {};
   }
-console.log("delete section")
   deleteNote(noteId)
   // .then(() => {
-    console.log("then")
     getAndRenderNotes();
     renderActiveNote();
   // })
@@ -175,7 +172,6 @@ const renderNoteList = async (notes) => {
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => {
-  console.log("get/render")
   return getNotes().then(renderNoteList)};
 
 if (window.location.pathname === '/notes') {

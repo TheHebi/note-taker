@@ -1,6 +1,8 @@
 # Note Taker
 ![badmath](https://img.shields.io/github/repo-size/TheHebi/readme-generator)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Deployed <a href="https://njt-note-taker.herokuapp.com/" target="_blank">here</a>
  ## Table of Contents
 * [Installation](#installation)
 * [Instructions](#instructions)
