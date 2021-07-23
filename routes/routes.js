@@ -34,7 +34,6 @@ notes.get("/api/notes/:id", (req,res) => {
 // POST route for notes
 notes.post("/api/notes", (req, res) => {
   console.info(`${req.method} request received to add a note`);
-  console.log(req.body);
 
   const { title, text } = req.body;
 
@@ -56,7 +55,6 @@ notes.post("/api/notes", (req, res) => {
 // DELETE route for notes
 
 notes.delete("/api/notes/:id",(req,res)=>{
-  console.log(api,req.params)
   let foundNote = false;
   api.forEach((note,idx)=>{
       if(note.id===parseInt(req.params.id)){
@@ -64,18 +62,21 @@ notes.delete("/api/notes/:id",(req,res)=>{
           api.splice(idx,1)
         // api.filter(note=> note.id != +req.params.id)
         // foundNote = true
-          writeToFile("db/notes.json",api,(err)=>{
-              if(err){
-                  console.log(err);
-                  return res.status(500).send("error");
-              } else{ 
-                return res.send("deleted!")
-              }
-          })
+          
       }
   })
+  writeToFile("db/notes.json",api,(err)=>{
+    if(err){
+        console.log(err);
+        res.status(500).json(err);
+        return 
+    } else{ 
+      res.json(api)
+      return 
+    }
+})
   if(!foundNote){
-      return res.status(404).send("note not found")
+      return res.status(404).json(api)
   }
 })
 
