@@ -12,7 +12,7 @@ Deployed <a href="https://njt-note-taker.herokuapp.com/" target="_blank">here</a
 ## Description:
 The purpose of this application is to have a note taking application that stores the data server side instead of locally, so that the data will persist indefinitely until deleted by the user.
 ## Installation
-If you want to have this application running locally you will need to clone the repo. After cloning the repo open the terminal and run `npmi` followed by `node index.js`. This will have the application running on your local machine. If you'd rather used the hosted version, you can find that Deployed <a href="https://njt-note-taker.herokuapp.com/" target="_blank">here</a>.
+If you want to have this application running locally you will need to clone the repo. After cloning the repo open the terminal and run `npmi` followed by `node index.js`. This will have the application running on your local machine. If you'd rather used the hosted version, you can find that deployed <a href="https://njt-note-taker.herokuapp.com/" target="_blank">here</a>.
 ## Instructions
 Upon loading the application you will be met with this screen.
 
