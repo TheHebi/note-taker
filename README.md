@@ -18,7 +18,7 @@ Upon loading the application you will be met with this screen.
 
 ![initial load](./images/initial-load.png)
 
-Clcik on the Get Started button and you will be redirected to the notes page. Here you can input text into the notes field. After you're finished writing a note, click on the floppy disk iscon to save the note to the notes database.
+Click on the Get Started button and you will be redirected to the notes page. Here you can input text into the notes field. After you're finished writing a note, click on the floppy disk iscon to save the note to the notes database.
 
 ![demo note](./images/demo-note.png)
 
